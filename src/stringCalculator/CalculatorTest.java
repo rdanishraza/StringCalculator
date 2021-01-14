@@ -1,6 +1,9 @@
 package stringCalculator;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -30,8 +33,8 @@ public class CalculatorTest {
 		
 		//support different delimiters
 		assertEquals(2, calculator.add("1;1"));
-		assertEquals(3, calculator.add("//;\n1;2"));
-		assertTrue(6 == calculator.add("///\n1;\n;//2|3"));
+		assertTrue(6 == calculator.add("1\n;//2//3"));
+		assertTrue(0 == calculator.add(";"));
 	}
 }
 
