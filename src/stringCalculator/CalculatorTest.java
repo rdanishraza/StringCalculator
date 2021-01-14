@@ -35,6 +35,12 @@ public class CalculatorTest {
 		assertEquals(2, calculator.add("1;1"));
 		assertTrue(6 == calculator.add("1\n;//2//3"));
 		assertTrue(0 == calculator.add(";"));
+		
+		//test code for Negative numbers
+		assertEquals("Negatives are not allowed", calculator.add("-1,-2"));
+		assertFalse(6 == calculator.add("-1,2,-3"));
+		assertEquals(1,"-1");  //it is not equal because string will not accept the negative numbers
+		assertEquals(-1,"-1"); // it is not equal because string will not accept the negative numbers. it will throw an NumberFormatException when negative number appear
 	}
 }
 
