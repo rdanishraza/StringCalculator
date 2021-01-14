@@ -24,9 +24,14 @@ public class CalculatorTest {
 
 		// Handle new lines between numbers (instead of commas)
 		assertEquals(6, calculator.add("1\n2,3"));
-		assertFalse(1 == calculator.add("1,\n"));
-		assertEquals(6, calculator.add("\n1,2,3\n"));
+		assertFalse(2 == calculator.add("1,\n"));
+		assertEquals(6, calculator.add("1\n,2\n,3"));
 		assertTrue(3 == calculator.add("1,,2"));
+		
+		//support different delimiters
+		assertEquals(2, calculator.add("1;1"));
+		assertEquals(3, calculator.add("//;\n1;2"));
+		assertTrue(6 == calculator.add("///\n1;\n;//2|3"));
 	}
 }
 
