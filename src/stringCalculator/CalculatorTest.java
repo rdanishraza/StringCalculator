@@ -30,12 +30,12 @@ public class CalculatorTest {
 		assertFalse(2 == calculator.add("1,\n"));
 		assertEquals(6, calculator.add("1\n,2\n,3"));
 		assertTrue(3 == calculator.add("1,,2"));
-		
+
 		//support different delimiters
 		assertEquals(2, calculator.add("1;1"));
 		assertTrue(6 == calculator.add("1\n;//2//3"));
 		assertTrue(0 == calculator.add(";"));
-		
+
 		//test code for Negative numbers
 		assertEquals("Negatives are not allowed", calculator.add("-1,-2"));
 		assertFalse(6 == calculator.add("-1,2,-3"));
